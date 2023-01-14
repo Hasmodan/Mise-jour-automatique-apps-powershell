@@ -1,0 +1,36 @@
+#Un petit programme sans prétention ou autre qui permet de télécharger automatiquement la mise à jour du logiciel voulu sur le site de l'éditeur
+#avec une ouverture automatique pour faire l'installation de votre programme. 
+
+$continue = $true
+while ($continue){
+  write-host “----------------------Mise à jour des programmes  -----------------------”
+  write-host “1. Mettre à jour "Nom du logiciel de l'éditeur que vous voulez”
+  write-host "2. Mettre à jour Nom du logiciel de l'éditeur que vous voulez"
+  write-host "3. Mettre à jour Nom du logiciel de l'éditeur que vous voulez"
+  write-host "x. exit"
+  write-host "--------------------------------------------------------"
+  $choix = read-host “faire un choix :”
+  switch ($choix){
+    1{$source = 'URL DE TELECHARGEMENT DU SITE DE L'EDITEUR'
+$destination = 'LA OU VOUS VOULEZ AVOIR VOTRE FICHIER TELECHARGER'
+#Download the file
+Invoke-WebRequest -Uri $source -OutFile $destination
+Write-Host "Démarrage de l'installation..." 
+Start-Process -FilePath "METTRE VOTRE CHEMIN DE DESTINATION"}
+    2{
+$source = 'URL DE TELECHARGEMENT DU SITE DE L'EDITEUR'
+$destination = 'LA OU VOUS VOULEZ AVOIR VOTRE FICHIER TELECHARGER'
+#Download the file
+Invoke-WebRequest -Uri $source -OutFile $destination
+Write-Host "Démarrage de l'installation..." 
+Start-Process -FilePath "METTRE VOTRE CHEMIN DE DESTINATIONe"}
+    ‘x’ {$continue = $false}
+    3{$source = 'URL DE TELECHARGEMENT DU SITE DE L'EDITEUR'
+$destination = 'LA OU VOUS VOULEZ AVOIR VOTRE FICHIER TELECHARGER'
+#Download the file
+Invoke-WebRequest -Uri $source -OutFile $destination
+Write-Host "Démarrage de l'installation..." 
+Start-Process -FilePath "METTRE VOTRE CHEMIN DE DESTINATION"}
+    default {Write-Host "Choix invalide"-ForegroundColor Red}
+  }
+}
